@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/8cb99a8cd7.js" crossorigin="anonymous"></script>
+	<title>Quiz Syhus</title>
+</head>
+
+<body>
+	<!--###Div Fixa da esquerda###-->
+	<div class="row h-100">
+
+		<div class="col left">
+			<div class="syhus-container col-9">
+				<img src="img\logo-syhus-01.png" class="img-fluid logo">
+				<h2>Faça um ótimo <b>pitch</b> e conquiste o seu <b>investidor</b></h2>
+				<p>Faça o nosso quiz agora e descubra no final se você está realmente pronto para vencer um pitch e conquistar o seu investidor</p>
+				<a href="https://www.facebook.com/syhus.com.br/"><i class="fab fa-facebook-square fa-2x"></i></a> <a href="https://www.instagram.com/syhuscontabilidade/"><i class="fab fa-instagram fa-2x"></i></a> <a href="https://pt.linkedin.com/company/syhus-intelig%C3%AAncia-financeira"><i class="fab fa-linkedin-in fa-2x"></i></a>
+				<p>Syhus Contabilidade 2019 © Todos os direitos reservados</p>
+			</div>
+		</div>
+		
+		<!--###Div Direita###-->
+		<div class="col right">
+			<!--###Formulario###-->
+			<form name="quizPitch" id="form-pitch" action="quiz.html" method="POST" class="col-9">
+				<div id="formulario" class="form" style="display: none;">
+					<h2 class="form-h2">Faça seu cadastro abaixo e veja o resultado do <b>Quiz!</b></h2>
+					<div class="form-group">
+						<input name="nome" type="text" class="form-control" id="nome" placeholder="Nome" required>
+					</div>
+					<div class="form-group">
+						<input name="email" type="email" class="form-control" id="email" placeholder="Email" required>
+					</div>
+
+					<div class="form-group">
+						<input name="whats" type="text" class="form-control" id="whats" placeholder="Whatsapp" required>
+					</div>
+					<div class="form-group">
+						<input name="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade" required>
+					</div>
+					<div class="form-group" style="display: none;">
+						<input name="respostas" type="text" class="form-control" id="respostas-form" value="">
+					</div>
+
+				</div>
+				<div id="section-inicio">
+					<h2 class="form-h2">Clique no botão abaixo e participe do <b>Quiz!</b></h2>
+				</div>
+				<!--###Quiz###-->
+				<div id="quizContainer" class="quiz-container" style="display: none;">
+					<div id="pergunta" class="pergunta"></div>
+					<label class="option"><input type="radio" name="option" value="A"/><span id="opt1"></span></label>
+					<label class="option"><input type="radio" name="option" value="B"/><span id="opt2"></span></label>
+					<label class="option"><input type="radio" name="option" value="C"/><span id="opt3"></span></label>
+					<label class="option"><input type="radio" name="option" value="D"/><span id="opt4"></span></label>
+					<div class="alert alert-warning" id="aviso" style="display: none;">
+						Escolha uma opção
+					</div>
+				</div>
+
+				<div>
+					<button type="button" id="startButton" class="btn btn-default" onclick="inicio();">Iniciar</button>
+					<button type="button" id="nextButton" class="btn btn-default" onclick="proximaPergunta();" style="display: none;">Próximo</button>
+					<button type="submit" id="finishButton" class="btn btn-default" style="display: none;">Enviar</button>
+				</div>
+			</form>
+		</div>
+		<!--###Fim da Row###-->
+	</div>
+
+	<script src="js\question.js"></script>
+	<script src="js\quiz-script.js"></script>
+	<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/a50aa93c-72e0-4435-aacf-41a362d0213c-loader.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+</body>
+</html>
+
+<!--Inicio Função JS para mascarar telefone-->
+<script type="text/javascript">
+	function mascara(o,f){
+		v_obj=o
+		v_fun=f
+		setTimeout("execmascara()",1)
+	}
+
+	function execmascara(){
+		v_obj.value=v_fun(v_obj.value)
+	}
+
+	function mtel(v){
+
+		v=v.replace(/\D/g,"");
+		v=v.replace(/^(\d{2})(\d)/g,"($1) $2");
+		v=v.replace(/(\d)(\d{4})$/,"$1-$2"); 
+		return v;
+	}
+
+	function id( el ){
+		return document.getElementById( el );
+	}
+
+	window.onload = function(){
+		id('whats').setAttribute('maxlength',15);
+		id('whats').onkeypress =
+		function(){
+			mascara( this, mtel );
+		}
+	}
+</script>

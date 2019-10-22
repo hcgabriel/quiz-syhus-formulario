@@ -1,0 +1,125 @@
+html, body{
+	height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.left{
+	background: #1D7BC5;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4em;
+}
+
+.right{
+	background:white;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4em;
+}
+
+h2, p{
+	color: white !important;
+	margin: 30px 0 !important;
+}
+
+h2{
+	font-size: 3rem !important;
+	font-weight: 300 !important;
+}
+
+p{
+	font-size: 1rem;
+	font-weight: lighter !important;
+}
+
+h3{
+	color: black !important;
+}
+
+label.option{
+	display: block;
+}
+
+.option{
+	color: #01457A;
+	font-size: 1rem;
+	padding: 0.5em;
+}
+
+.option:hover{
+	background-color: #E6E7E9;
+}
+
+.btn-default{
+	background: #67C7C5;
+	color: white;
+	border-radius: 35px !important;
+	padding-left: 3em !important;
+	padding-right: 3em !important;
+	font-size: 1.2rem !important;
+}
+
+.btn-default:hover{
+	background:#56a6a4;
+}
+
+div.pergunta{
+	color: #01457A;
+	font-size: 1.5rem;
+	padding: 0.5em 0.5em 0.5em 0;
+}
+
+span{
+	margin-left: 5px;
+}
+
+b{
+	font-weight: bold !important;
+}
+
+.row{
+	max-width: 100%;
+}
+
+.fab{
+	color: white;
+	margin-right: 0.5em;
+}
+
+.fab:hover{
+	transform: scale(1.1);
+	transition: 0.2s;
+}
+
+h2.form-h2{
+	color: #01457A !important;
+}
+
+p.topo-resultado{
+	background: #67C7C5;
+	color: white;
+	border-radius: 35px !important;
+	font-size: 1.2rem !important;
+	text-align: center;
+	padding: 0.2em;
+}
+
+p.conteudo-resultado{
+	color: #01457A !important;
+	background: #E6E7E9;
+	padding: 1.2em;
+	font-size: 1.25rem;
+}
+
+.logo{
+	width: 350px;
+}
